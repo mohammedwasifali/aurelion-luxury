@@ -1,5 +1,26 @@
 # Welcome to your Lovable project
 
+
+## Live Demo
+https://aurelion-luxury.lovable.app
+
+## Tech Stack
+- Frontend: React (Vite) + Tailwind
+- Backend: Supabase (managed via Lovable Cloud)
+- Auth: Supabase Auth
+- Database: PostgreSQL
+- Architecture: Microservices (Auth, Products, Orders)
+
+## Admin
+- Admin dashboard at `/admin`
+- Admin can add products, update order status (Pending → Shipped → Delivered)
+
+## Note
+Backend services are managed via Lovable Cloud using Supabase technology.
+
+
+
+
 ## Project info
 
 **URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
