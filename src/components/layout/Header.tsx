@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, User, Menu, X, LogOut } from 'lucide-react';
+import { ShoppingBag, User, Menu, X, LogOut, Package } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/contexts/CartContext';
 import { useAuth } from '@/contexts/AuthContext';
@@ -63,6 +63,15 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-6">
             {user ? (
               <div className="flex items-center space-x-4">
+                <Link to="/orders">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="text-muted-foreground hover:text-primary"
+                  >
+                    <Package className="h-5 w-5" />
+                  </Button>
+                </Link>
                 <span className="text-xs text-muted-foreground uppercase tracking-wider">
                   {user.email?.split('@')[0]}
                 </span>
@@ -134,6 +143,15 @@ const Header = () => {
                     className="text-sm font-body tracking-widest text-primary uppercase"
                   >
                     Admin
+                  </Link>
+                )}
+                {user && (
+                  <Link
+                    to="/orders"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-sm font-body tracking-widest text-muted-foreground hover:text-primary transition-colors duration-300 uppercase"
+                  >
+                    My Orders
                   </Link>
                 )}
                 <div className="flex items-center space-x-4 pt-4 border-t border-border/50">
